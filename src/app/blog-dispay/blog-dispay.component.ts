@@ -20,18 +20,24 @@ blogs;
     });
   }
   delblog(id) {
-
-    this.apiService
-        .delblog(id)
-        .subscribe(
-            response => {
-              console.log('sucessfully deleted');
-              this.toastr.error('success', 'Delete blog');
-            location.reload();
-            },
-            error => {
-              console.log('error......');
-            }
+       if(localStorage.getItem('access_token') !==  null){
+            this.apiService
+              .delblog(id)
+              .subscribe(
+               response => {
+                console.log('sucessfully deleted');
+                this.toastr.error('success', 'Delete blog');
+                location.reload();
+                            },
+               error => {
+                console.log('error......');
+                          }
         );
+  
+    }
+   else{
+    this.toastr.error('Login', 'Please Login');
+    this.router.navigateByUrl('/login');
+   }
   }
 }
