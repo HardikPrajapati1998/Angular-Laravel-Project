@@ -1,16 +1,15 @@
 <h1>From</h1>
 
-
-
-
-
- 
-
     <app-header></app-header>
+ 
 <div class="container">
     <a href="/blog-create"> <button class="w3-button w3-black w3-section" > Create Blog </button></a>
+    
+    <div class="search-blog" style="margin: 20px;">
+      <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Start searching Blogs">
+  </div>
   <h2>Blog Table</h2>
-         
+ <hr>
   <table class="table table-borderless">
     <thead>
       <tr>
@@ -22,7 +21,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let blog of blogs">
+      <tr *ngFor="let blog of blogs | filter:searchText">
         <td>{{blog.blog_name}}</td>
         <td>{{blog.category_name}}</td>
         <td>{{blog.description}}</td>

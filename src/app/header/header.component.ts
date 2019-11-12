@@ -15,9 +15,7 @@ export class HeaderComponent implements OnInit {
   this.access_token = localStorage.getItem('access_token');
   }
  
-
   onClick(logout: Event): void {
-    
      this.userdataService.logout()   
           this.toastr.success('success', 'logout');
     this.router.navigateByUrl('');

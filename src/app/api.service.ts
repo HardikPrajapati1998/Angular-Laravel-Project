@@ -78,7 +78,5 @@ logout() {
  return localStorage.removeItem('access_token');
 }
 
-public get loggedIn(): boolean{
-  return localStorage.getItem('access_token') !==  null;
-}
+
 }

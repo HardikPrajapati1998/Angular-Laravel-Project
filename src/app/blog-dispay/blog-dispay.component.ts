@@ -9,7 +9,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class BlogDispayComponent implements OnInit {
 blogs;
-  constructor(private apiService: ApiService,private toastr: ToastrService) { }
+  constructor(private apiService: ApiService,private toastr: ToastrService,private router: Router) { }
 
   ngOnInit() {
     this.apiService.getNews().subscribe((data)=>{

@@ -22,9 +22,10 @@ password;
     // User data which we have received from the registration form.
     this.userdataService.login(userdata).subscribe((reponse)=>{
       this.userlog = reponse['access_token'];
-localStorage.setItem('access_token',reponse['access_token']);
+
       if(this.userlog == true)
       {
+        localStorage.setItem('access_token',reponse['access_token']);
         this.toastr.success('Successfully Log In...');
         this.router.navigateByUrl('');
       }

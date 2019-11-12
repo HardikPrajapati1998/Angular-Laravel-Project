@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BlogDispayComponent } from './blog-dispay/blog-dispay.component';
 import { BlogCreateComponent } from './blog-create/blog-create.component';
 import { FormsModule } from '@angular/forms';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { MainComponent } from './main/main.component';
@@ -33,6 +34,7 @@ import { LoginComponent } from './login/login.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    Ng2SearchPipeModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot({
       timeOut: 10000,
