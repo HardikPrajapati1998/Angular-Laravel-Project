@@ -11,7 +11,17 @@ import { ToastrService } from 'ngx-toastr';
 export class BlogUpdateComponent implements OnInit {
   blogs;
   constructor(private apiService: ApiService,private toastr: ToastrService,private route: ActivatedRoute,private router: Router) { 
-    this.route.params.subscribe( params => this.getupdate(params['id']) );
+    
+    
+      if(localStorage.getItem('access_token') !==  null){
+      
+     this.route.params.subscribe( params => this.getupdate(params['id']) );
+  
+    }
+   else{
+    this.toastr.error('Login', 'Please Login');
+    this.router.navigateByUrl('/login');
+   }
   }
 
   ngOnInit() {
