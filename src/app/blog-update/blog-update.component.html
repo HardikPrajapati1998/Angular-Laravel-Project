@@ -1,0 +1,82 @@
+<h1>Form</h1>
+<app-header></app-header>
+<div class="containers">
+    <h1>Update Blog</h1>
+        <div class="row">
+        <div class="col-md-6" >
+                <div *ngFor="let blog of blogs">
+                       
+                        <form #userRegForm='ngForm' (ngSubmit)="userRegForm.form.valid && updateUser(userRegForm.value)"  novalidate>
+             
+                                        <div class="form-group" >
+               
+                                                        <input type="hidden" class="w3-input w3-section w3-border" placeholder="User Name" name="id" value="{{id}}" [(ngModel)]="blog.id" #blogid="ngModel" [ngClass]="{ 'is-invalid': userRegForm.submitted && blogid.invalid }" required>
+                                      
+                                      <div *ngIf="userRegForm.submitted && blogid.invalid" class="invalid-feedback">
+                                      <div *ngIf="blogid.errors.required" class="alert-danger">Name is required</div>
+                                      
+                                      </div>
+                                      
+                                      </div>
+                        <div class="form-group" >
+               
+                                <input type="text" class="w3-input w3-section w3-border" placeholder="User Name" name="user_id" value="{{user_name}}" [(ngModel)]="blog.user_name" #username="ngModel" [ngClass]="{ 'is-invalid': userRegForm.submitted && username.invalid }" required>
+              
+              <div *ngIf="userRegForm.submitted && username.invalid" class="invalid-feedback">
+              <div *ngIf="username.errors.required" class="alert-danger">Name is required</div>
+              
+              </div>
+              
+              </div>
+
+              <div class="form-group">
+                    <input type="text" class="w3-input w3-section w3-border" id="category_name" placeholder="category_name" name="category_id" value="" [(ngModel)]="blog.category_name" #category="ngModel" [ngClass]="{ 'is-invalid': userRegForm.submitted && category.invalid }" required> 
+  
+  <div *ngIf="userRegForm.submitted && category.invalid" class="invalid-feedback">
+  <div *ngIf="category.errors.required" class="alert-danger">category_name is required</div>
+  
+  </div>
+  
+  </div>
+
+  <div class="form-group">
+        <input type="text" class="w3-input w3-section w3-border" id="category_name" placeholder="blog_name" name="blog_name"  [(ngModel)]="blog.blog_name" #blogn="ngModel" [ngClass]="{ 'is-invalid': userRegForm.submitted && blogn.invalid }" required> 
+
+<div *ngIf="userRegForm.submitted && blogn.invalid" class="invalid-feedback">
+<div *ngIf="blogn.errors.required" class="alert-danger">category_name is required</div>
+
+</div>
+
+</div>
+
+
+ <div class="form-group">
+        <input type="text" class="w3-input w3-section w3-border" id="description" placeholder="description" name="description" [(ngModel)]="blog.description" #des="ngModel" [ngClass]="{ 'is-invalid': userRegForm.submitted && des.invalid }" required validateEqual='password'>  
+
+<div *ngIf="userRegForm.submitted && des.invalid" class="invalid-feedback">
+<div *ngIf="des.errors.required" class="alert-danger">description is required</div>
+
+
+</div>
+
+</div> 
+
+
+<div class="align-center">
+        <button type="submit" class="w3-button w3-black w3-section" id="registeruser"  >Update</button>
+    </div>
+</form>
+                </div>
+                <!--  -->
+        
+        
+       
+        
+     
+    
+        </div>
+        
+        </div>
+        </div>
+<app-footer></app-footer>
+   

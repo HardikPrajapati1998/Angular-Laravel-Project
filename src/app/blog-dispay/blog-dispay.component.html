@@ -1,0 +1,43 @@
+<h1>From</h1>
+
+
+
+
+
+ 
+
+    <app-header></app-header>
+<div class="container">
+    <a href="/blog-create"> <button class="w3-button w3-black w3-section" > Create Blog </button></a>
+  <h2>Blog Table</h2>
+         
+  <table class="table table-borderless">
+    <thead>
+      <tr>
+        <th>blog_name</th>
+        <th>category_name</th>
+        <th>description</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let blog of blogs">
+        <td>{{blog.blog_name}}</td>
+        <td>{{blog.category_name}}</td>
+        <td>{{blog.description}}</td>
+      <td> <a href="/blog-update/{{blog.id}}">  <button class="w3-button w3-black w3-section">Edit</button></a>
+      </td> 
+       <td> <button class="w3-button w3-black w3-section" type="submit" (click)="delblog(blog.id)">
+               <i class="fa fa-paper-plane"></i>Delete
+           </button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+    
+ <app-footer></app-footer>

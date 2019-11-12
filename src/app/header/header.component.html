@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="#home" class="w3-bar-item w3-button"><b>BR</b> Architects</a>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div *ngIf="access_token !==  null" class="w3-right w3-hide-small">
+      <a href="#projects" class="w3-bar-item w3-button">Projects</a>
+      <a href="#about" class="w3-bar-item w3-button">About</a>
+      <a href="/blog-create" class="w3-bar-item w3-button">Blog</a>
+      <a href="/blog-display" class="w3-bar-item w3-button">blog-display</a>
+      <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+        <a (click)="onClick(logout)" class="w3-bar-item w3-button">Logout</a>
+     
+    </div>
+    <div *ngIf="access_token ===  null" class="w3-right w3-hide-small">
+      <a href="#projects" class="w3-bar-item w3-button">Projects</a>
+      <a href="#about" class="w3-bar-item w3-button">About</a>
+      <a href="/blog-create" class="w3-bar-item w3-button">Blog</a>
+      <a href="/blog-display" class="w3-bar-item w3-button">blog-display</a>
+      <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+    
+        <a href="/login" class="w3-bar-item w3-button">login</a>
+     
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+</body>
+</html>
