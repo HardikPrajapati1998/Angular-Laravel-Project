@@ -12,7 +12,7 @@ export class BlogCreateComponent implements OnInit {
   title = 'myapp';
   constructor(private userdataService: ApiService,private toastr: ToastrService,private router: Router) { 
     if(localStorage.getItem('access_token') !==  null){
-      this.toastr.success('success', 'create RegisterUser');
+      
       this.router.navigateByUrl('/blog-create');
   
     }
